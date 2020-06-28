@@ -22,7 +22,11 @@ function Block({ element, onChangePosition }) {
   const handleDragStop = (e, position) => onChangePosition(id, position);
 
   return (
-    <ReactDraggable bounds="parent" position={{ x, y }} onStop={handleDragStop}>
+    <ReactDraggable
+      bounds={{ top: 0, left: 0, right: 1000, bottom: 5000 }}
+      position={{ x, y }}
+      onStop={handleDragStop}
+    >
       <div id={id} style={style} />
     </ReactDraggable>
   );

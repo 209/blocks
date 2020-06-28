@@ -21,18 +21,21 @@ export default function App() {
   return (
     <div style={{ margin: '20px 20px' }}>
       <div style={{ margin: '0 0 20px 0' }}>
-        <span style={{ display: 'inline-block' }}>
-          <Link to="/">Classic</Link>
+        <span style={{ marginLeft: 20, display: 'inline-block' }}>
+          <Link to="/canvas_manually">
+            Canvas Manually (konva.js) - fastest
+          </Link>
         </span>
         <span style={{ marginLeft: 20, display: 'inline-block' }}>
-          <Link to="/canvas">Canvas</Link>
+          <Link to="/canvas">Canvas (react-konva)</Link>
         </span>
         <span style={{ marginLeft: 20, display: 'inline-block' }}>
-          <Link to="/canvas_manually">Canvas Manually (faster)</Link>
+          <Link to="/">Classic: divs (react-draggable)</Link>
         </span>
       </div>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={CanvasManuallyPage} />
+        <Route exact path="/classic" component={HomePage} />
         <Route exact path="/canvas" component={CanvasPage} />
         <Route exact path="/canvas_manually" component={CanvasManuallyPage} />
         <Route component={NotFoundPage} />

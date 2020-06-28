@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { bindActionCreators, compose } from 'redux';
 import { useInjectReducer } from 'utils/injectReducer';
-import CanvasBlocks from 'components/CanvasBlocksWrapper';
+import CanvasManuallyWrapper from 'components/CanvasManuallyWrapper';
 import * as actions from 'stores/blocks/actions';
 import { makeSelectElements, makeSelectPage } from 'stores/blocks/selectors';
 import reducer from 'stores/blocks/reducer';
@@ -19,7 +19,7 @@ export function CanvasManuallyBoard({ elements, page, changePosition }) {
   useInjectReducer({ key: 'blocks', reducer });
 
   return (
-    <CanvasBlocks
+    <CanvasManuallyWrapper
       onChangePosition={changePosition}
       elements={elements}
       page={page}

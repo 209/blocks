@@ -17,7 +17,7 @@ export const initialState = {
     const HEIGHT = 30;
     let counter = 0;
 
-    for (let i = 0; i < 100; i += 1) {
+    for (let i = 0; i < 200; i += 1) {
       for (let j = 0; j < 10; j += 1) {
         arr.push({
           id: counter,
