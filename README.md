@@ -1,5 +1,6 @@
 Start command: npm start
-Dev destination: http://localhost:3000/
+
+Dev destination: localhost:3000
 
 Realization on Konva.js without React is faster than other.
 
