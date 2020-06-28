@@ -1,14 +1,14 @@
-Запуск: npm start 
+Start command: npm start
+Dev destination: http://localhost:3000/
 
-http://localhost:3000/
 
-troubleshooting d&d performance
-Выбранная библиотека react-draggable имеет проблемы с производительностью на большом количестве элементов 
-Стоит попробовать react-beautiful-dnd или написать свою
+Optimizations: 
+- React.memo
+- using drop events for apply changes (throttling resolved in d&d libs)
+- using reselect (immutable state)
 
-Также, в контексте описанной задачи, можно использовать canvas
 
-В приложении выполнены оптимизации:
-- React.memo c кастомной функцией сравнения
-- использование только события drop, а не перемещения
-- используется reselect (стейт иммутабелен)
+Troubleshooting d&d performance ((1,2 GHz Dual-Core Intel Core m5, 8 GB 1867 MHz LPDDR3))
+- react-draggable has performance problems with 500 items and more
+- react-konva has performance problems with 1000 items and more.
+

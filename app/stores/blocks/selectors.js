@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { initialState } from './reducer';
+import { initialState } from 'stores/blocks/reducer';
 
 /**
  * Direct selector to the blocks state domain

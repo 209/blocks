@@ -10,21 +10,16 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { bindActionCreators, compose } from 'redux';
 import { useInjectReducer } from 'utils/injectReducer';
-import BlocksWrapper from 'components/BlocksWrapper';
-import * as actions from './actions';
-import { makeSelectElements, makeSelectPage } from './selectors';
-import reducer from './reducer';
+import CanvasBlocks from 'components/CanvasBlocksWrapper';
+import * as actions from 'stores/blocks/actions';
+import { makeSelectElements, makeSelectPage } from 'stores/blocks/selectors';
+import reducer from 'stores/blocks/reducer';
 
-// коннект к redux целенаправлено сделан здесь, снаружи, а не в компоненте BlocksWrapper
-// преимущества:
-//  - переиспользование
-//  - разделен коннект и компонент, легче тестировать
-//  - четко определены "точки входа": containers
-export function Blocks({ elements, page, changePosition }) {
+export function CanvasManuallyBoard({ elements, page, changePosition }) {
   useInjectReducer({ key: 'blocks', reducer });
 
   return (
-    <BlocksWrapper
+    <CanvasBlocks
       onChangePosition={changePosition}
       elements={elements}
       page={page}
@@ -32,7 +27,7 @@ export function Blocks({ elements, page, changePosition }) {
   );
 }
 
-Blocks.propTypes = {
+CanvasManuallyBoard.propTypes = {
   // dispatch: PropTypes.func.isRequired,
   elements: PropTypes.array.isRequired,
   page: PropTypes.object.isRequired,
@@ -41,6 +36,7 @@ Blocks.propTypes = {
 
 const mapStateToProps = createStructuredSelector({
   elements: makeSelectElements(),
+  elementsChunks: makeSelectElements(),
   page: makeSelectPage(),
 });
 
@@ -56,4 +52,4 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-export default compose(withConnect)(Blocks);
+export default compose(withConnect)(CanvasManuallyBoard);

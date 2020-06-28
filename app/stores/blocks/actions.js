@@ -4,7 +4,11 @@
  *
  */
 
-import { DEFAULT_ACTION, CHANGE_POSITION } from './constants';
+import {
+  DEFAULT_ACTION,
+  CHANGE_POSITION,
+  SET_DRAGGING,
+} from 'stores/blocks/constants';
 
 export function defaultAction() {
   return {
@@ -17,5 +21,12 @@ export function changePosition(id, position) {
     type: CHANGE_POSITION,
     id,
     position,
+  };
+}
+
+export function setDragging(id) {
+  return {
+    type: SET_DRAGGING,
+    id,
   };
 }

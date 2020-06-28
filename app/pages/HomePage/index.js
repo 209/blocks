@@ -8,8 +8,13 @@
 import React from 'react';
 // import { FormattedMessage } from 'react-intl';
 // import messages from 'pages/HomePage/messages';
-import Blocks from 'containers/Blocks';
+import Board from 'containers/Board';
 
 export default function HomePage() {
-  return <Blocks />;
+  return (
+    <>
+      <h2>Div blocks</h2>
+      <Board />
+    </>
+  );
 }

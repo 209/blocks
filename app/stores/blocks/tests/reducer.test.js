@@ -1,5 +1,5 @@
 // import produce from 'immer';
-import blocksReducer from '../reducer';
+import blocksReducer from 'stores/blocks/reducer';
 // import { someAction } from '../actions';
 
 /* eslint-disable default-case, no-param-reassign */

@@ -4,7 +4,7 @@
  *
  */
 import produce from 'immer';
-import * as actionTypes from './constants';
+import * as actionTypes from 'stores/blocks/constants';
 
 export const initialState = {
   page: {
@@ -17,7 +17,7 @@ export const initialState = {
     const HEIGHT = 30;
     let counter = 0;
 
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 0; i < 100; i += 1) {
       for (let j = 0; j < 10; j += 1) {
         arr.push({
           id: counter,
@@ -45,6 +45,16 @@ const blocksReducer = (state = initialState, action) =>
           if (draft.elements[i].id === action.id) {
             draft.elements[i].x = action.position.x;
             draft.elements[i].y = action.position.y;
+            draft.elements[i].isDragging = false;
+            break;
+          }
+        }
+
+        break;
+      case actionTypes.SET_DRAGGING:
+        for (let i = 0; i < draft.elements.length; i += 1) {
+          if (draft.elements[i].id === action.id) {
+            draft.elements[i].isDragging = true;
             break;
           }
         }

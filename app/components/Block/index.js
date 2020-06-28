@@ -19,7 +19,6 @@ function Block({ element, onChangePosition }) {
     position: 'absolute',
   };
 
-  // событие происходит по drop, поэтому не нужно устранять тротлинг
   const handleDragStop = (e, position) => onChangePosition(id, position);
 
   return (
@@ -34,7 +33,6 @@ Block.propTypes = {
   onChangePosition: PropTypes.func.isRequired,
 };
 
-// поверхностное сравнение element: устраняем переренеривание после изменения стейта
 const areEqual = (prevProps, nextProps) => {
   if (prevProps.element === nextProps.element) {
     return true;

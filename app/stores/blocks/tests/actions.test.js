@@ -1,5 +1,5 @@
-import { defaultAction, changePosition } from '../actions';
-import { DEFAULT_ACTION, CHANGE_POSITION } from '../constants';
+import { defaultAction, changePosition } from 'stores/blocks/actions';
+import { DEFAULT_ACTION, CHANGE_POSITION } from 'stores/blocks/constants';
 
 describe('Blocks actions', () => {
   describe('Default Action', () => {
