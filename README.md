@@ -8,6 +8,7 @@ Optimizations:
 - React.memo
 - using drop events for apply changes
 If need update block position in process of move than I will use debounce/throttling function with delay 1s.
+And I will exclude the movable block from areEqual of React.memo. 
 - using reselect (immutable state)
 
 Troubleshooting d&d performance ((1,2 GHz Dual-Core Intel Core m5, 8 GB 1867 MHz LPDDR3))
