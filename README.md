@@ -11,7 +11,7 @@ If need update block position in process of move than I will use debounce/thrott
 And I will exclude the movable block from areEqual of React.memo. 
 - using reselect (immutable state)
 
-Troubleshooting d&d performance ((1,2 GHz Dual-Core Intel Core m5, 8 GB 1867 MHz LPDDR3))
+Troubleshooting d&d performance (1,2 GHz Dual-Core Intel Core m5, 8 GB 1867 MHz LPDDR3)
 - react-draggable has performance problems with 500 items and more
 - react-konva has performance problems with 1000 items and more.
 
